@@ -3,9 +3,16 @@ import HomePage from './../views/HomePage.vue'
 import LoginPage from './../views/LoginPage.vue'
 import SignIn from './../views/SignIn.vue'
 const routes =[
-    { path: '/', component: LoginPage},
+    { path: '/',
+        component: LoginPage,
+        children: [
+            {
+              path: '/login',
+              component: SignIn
+            },
+          ]
+    },
     { path: '/home', component: HomePage},
-    { path:'/signIn',component: SignIn}
 
 ]
 const router = createRouter({

@@ -17,7 +17,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="flex flex-row items-center font-lg text-lg mt-3 hover:bg-grey rounded-full" :to="goTo">
+  <div class="flex flex-row items-center text-lg mt-3 hover:bg-grey rounded-full font-sans" :to="goTo">
     <slot></slot>
     <span class="hidden lg:block ml-4 ">
       {{ title }}

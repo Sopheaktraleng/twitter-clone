@@ -1,6 +1,6 @@
 <template>
   <!-- Middle -->
-  <div class="border w-1/2">
+  <div class="border w-1/2 font-sans">
           <!-- Header -->
           <div class="w-full flex border-b backdrop-blur-lg bg-white bg-opacity-70 sticky top-0 z-10">
     <top-nav class="flex-initial w-1/2">For you</top-nav>

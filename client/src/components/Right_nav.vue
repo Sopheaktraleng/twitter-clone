@@ -1,17 +1,17 @@
 <template>
   <!-- Right -->
-  <div class="w-1/3 pt-1 space-y-5 hidden lg:block">
-    <div class="sticky bg-white top-0 py-2 w">
+  <div class="w-1/3 pt-1 space-y-5 font-sans">
+    <div class=" bg-white top-0 py-2 w">
           <search-input/>
         </div>
         <boxlight class="mt-2">
-          <span class="text-lg font-bold">Subscribe to Premium</span>
+          <span class="text-lg font-bold font-sans">Subscribe to Premium</span>
           <div class="px-4 mt-3">
             <div>
               Subscribe to unlock new features and if eligible, receive a share of ads revenue.
             </div>
             <div class="py-2 ">
-              <button-defualt class="bg-blue md:w-32" :dark_mode="true">Subscribe</button-defualt>
+              <button-defualt class="bg-blue md:w-32">Subscribe</button-defualt>
             </div>
           </div>
         </boxlight>
