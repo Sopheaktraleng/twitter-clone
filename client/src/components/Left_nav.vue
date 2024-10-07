@@ -38,7 +38,7 @@
               <more-icon class="w-6 mx-auto lg:mx-0"/>
             </menu-item>
           
-            <menu-item class="w-full rounded-full bg-blue justify-center ">Post
+            <menu-item class="w-36 h-12 text-xl rounded-full bg-blue justify-center">Post
             </menu-item>
             </div>
         

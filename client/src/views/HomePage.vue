@@ -1,9 +1,9 @@
 <template>
     <div class="bg-white dark:bg-dim-900">
         <div class="w-full px-2">
-            <div class="flex justify-center">
+            <div class="flex flex-row justify-center">
                 <Left_nav/>
-                <Middle_nav/>
+                <Middle_nav class="mx-12"/>
                 <Right_nav/>
             </div>
         </div>

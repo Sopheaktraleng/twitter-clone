@@ -1,10 +1,10 @@
 <template>
   <!-- Right -->
   <div class="w-1/3 pt-1 space-y-5 hidden lg:block">
-    <div class="sticky bg-white top-0 py-2">
+    <div class="sticky bg-white top-0 py-2 w">
           <search-input/>
         </div>
-        <boxlight class="mt-4">
+        <boxlight class="mt-2">
           <span class="text-lg font-bold">Subscribe to Premium</span>
           <div class="px-4 mt-3">
             <div>
@@ -15,7 +15,7 @@
             </div>
           </div>
         </boxlight>
-        <boxlight class="mt-4">
+        <boxlight class="mt-4 border-black">
           <span class="text-lg font-bold">Trends for you</span>
             <trend-item :title="'#Phnom Penh'" :subtitle="'Trending in Cambodia'"></trend-item>
             <trend-item :title="'WhatsApp Link'" :subtitle="'Trending in Cambodia'" :post="'100k posts'"></trend-item>
