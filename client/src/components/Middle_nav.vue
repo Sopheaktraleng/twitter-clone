@@ -19,7 +19,7 @@
               </div>
               <div class="w-full p-2">
                 <textarea
-                  class="dark:text-white text-gray-900 placeholder-gray-400 w-full h-10 bg-transparent border-0 focus:outline-none resize-none"
+                  class="placeholder-gray-400 w-full h-10 bg-transparent border-0 focus:outline-none resize-none font-sans text-lg"
                   placeholder="What's happening? " v-model="inputValue"
                 ></textarea>
                 
@@ -106,7 +106,7 @@
                   </g>
                 </svg>
               </a>
-              <div class="mx-auto w-16 h-5 bg-blue font-lg text-lg hover:bg-grey rounded-full text-center py-2" type="'submit'">Post</div>
+              <div class="ml-auto mr-16  w-16 h-5 bg-blue font-lg text-lg hover:bg-grey rounded-full text-center p-2" type="'submit'">Post</div>
             </div>
           </div>
           <div
