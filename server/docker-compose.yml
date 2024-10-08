@@ -3,8 +3,10 @@ services:
   twitter-server:
     build: .
     volumes:
-      - ./:/app
+      - .:/app
       - /app/node_modules
+    ports:
+      - 4000:4000
     depends_on:
       - mongo-db
   mongo-db:
