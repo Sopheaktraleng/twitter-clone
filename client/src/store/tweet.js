@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import { useUserStore } from "./user";
 export const useTweetStore = defineStore('Tweets',{
     state: ()=> ({
         tweets:[

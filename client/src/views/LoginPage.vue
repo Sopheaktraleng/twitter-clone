@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-row items-center justify-center h-screen">
+    <div class="flex flex-row items-center justify-center h-screen font-sans">
         <div class="absolute top-0 left-0 z-20 bg-b text-white p-4 ">
             <router-view></router-view>
         </div>
@@ -13,11 +13,11 @@
             <div class="font-bold text-3xl mt-10">Join today.</div>
             <div class=" mt-10 w-full md:w-2/3 lg:w-2/3 xl:w-2/3 grid grid-cols-1 space-y-2">
                 <button-defualt class="flex justify-center gap-2">
-                    <google-icon></google-icon>
+                    <google-icon class="px-2"></google-icon>
                      Sign up with Google
                 </button-defualt>
                 <button-defualt class="flex justify-center gap-2">
-                    <apple-icon></apple-icon>
+                    <apple-icon class="px-2"></apple-icon>
                      Sign up with Apple
                 </button-defualt>
                <devider-rule>or</devider-rule>
