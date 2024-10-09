@@ -2,9 +2,10 @@ version: '3.8'
 services:
   twitter-server:
     build: .
+    container_name: twitter-server
+    restart: always
     volumes:
       - .:/app
-      - /app/node_modules
     ports:
       - 4000:4000
     depends_on:
