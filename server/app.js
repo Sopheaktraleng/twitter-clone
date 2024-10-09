@@ -6,6 +6,7 @@ const port = 4000;
 const mongoose = require('mongoose');
 const mongoURL = 'mongodb://mongo-db:27017/twitterdb'; // Ensure mongo-db is the service name
 const { setupSwagger } = require('./swagger/index.js');
+const userRouter = require('./routes/user.js')
 
 // Middleware to parse JSON requests
 app.use(express.json());
@@ -27,3 +28,6 @@ setupSwagger(app);
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
+app.use(express.json());
+// Routes
+app.use('/api/v1/user', userRouter)

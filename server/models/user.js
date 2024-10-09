@@ -3,12 +3,9 @@ const mongoose = require('mongoose');
 const userSchema = new mongoose.Schema({
     name: String,
     age: Number,
-    email: String
+    email: { type: String, unique: true },
   });
   
   // Create a model
   const User = mongoose.model('User', userSchema);
-  
-  // Example usage
-  const newUser = new User({ name: 'John', age: 30, email: 'john@example.com' });
-  newUser.save().then((user) => console.log('User created:', user)).catch(err => console.error('Error:', err));
+module.exports = User
