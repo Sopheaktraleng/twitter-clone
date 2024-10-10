@@ -1,33 +1,25 @@
-const User = require('../models/user.js');
+const { userModel } = require('../models/user.js'); // Correct import
 const asyncHandler = require('express-async-handler');
+const bcrypt = require('bcryptjs');
 
 const createUser = asyncHandler(async (req, res) => {
-    const { name, age, email } = req.body;
+    const { username, email, password } = req.body;
 
-    // Validate input data
-    if (!name || !email) {
-        return res.status(400).json({ message: "Name and email are required." });
+    if (!password) {
+        return res.status(400).json({ message: 'Password is required.' });
     }
 
-    // Check if the email already exists
-    const existingUser = await User.findOne({ email });
-    if (existingUser) {
-        return res.status(400).json({ message: "Email already in use." });
-    }
+    const hashedPassword = await bcrypt.hash(password, 10);
 
-    // Create a new user
-    const user = new User({
-        name,
-        age,
-        email
+    const newUser = new userModel({
+        username: username,
+        email: email,
+        password: hashedPassword
     });
 
-    // Save the user to the database
-    const result = await user.save();
-    console.log(result)
-    // Return the created user
-    return res.status(201).json(result);
-    
+    const result = await newUser.save();
+    result.password = ''; // Remove the password before sending the result
+    res.send(result);
 });
 
-module.exports = { createUser };
+module.exports = createUser;
