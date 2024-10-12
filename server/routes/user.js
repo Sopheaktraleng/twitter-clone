@@ -1,7 +1,6 @@
 const express = require('express');
 const userRouter = express.Router();
-const createUser = require('../controllers/users');
-
+const {createUser,getUserById, getAllUser, updateById, deleteById} = require('../controllers/users');
 /**
  * @swagger
  * components:
@@ -63,6 +62,10 @@ const createUser = require('../controllers/users');
  *       400:
  *         description: Bad request
  */
-userRouter.post('/', createUser);
+userRouter.post('/', createUser)
+userRouter.get('/',getAllUser)
+userRouter.get('/:id',getUserById)
+userRouter.put('/:id',updateById)
+userRouter.delete('/:id',deleteById)
 
 module.exports = userRouter;
