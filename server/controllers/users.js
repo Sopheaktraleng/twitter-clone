@@ -1,6 +1,7 @@
 const { userModel } = require('../models/user.js'); // Correct import
 const asyncHandler = require('express-async-handler');
 const bcrypt = require('bcryptjs');
+const signToken = require('../common/index.js')
 
 const createUser = asyncHandler(async (req, res) => {
     const { username, email, password } = req.body;
@@ -42,4 +43,33 @@ const deleteById = (async (req,res)=>{
     const user = await userModel.deleteOne({id})
     res.send(user)
 })
-module.exports = { createUser, getUserById, getAllUser, updateById, deleteById};
+const loginUser = asyncHandler(async (req, res) => {
+    const { email, password } = req.body;
+
+    // Ensure both email and password are provided
+    if (!email || !password) {
+        return res.status(400).json({ error: "Email and password are required!" });
+    }
+
+    // Find user by email
+    const user = await userModel.findOne({ email });
+    
+    // Check if user exists
+    if (!user) {
+        return res.status(401).json({ error: "Password or email incorrect!" });
+    }
+
+    // Compare password
+    const passwordMatch = await bcrypt.compare(password, user.password);
+
+    // If password does not match, return an error
+    if (!passwordMatch) {
+        return res.status(401).json({ error: "Password or email incorrect!" });
+    }
+
+    // Return JWT to client if authentication is successful
+    const token = signToken(user._id, user.email, user.username);
+    return res.status(200).json({ token });
+});
+
+module.exports = { createUser, getUserById, getAllUser, updateById, deleteById, loginUser};

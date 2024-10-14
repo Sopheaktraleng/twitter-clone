@@ -2,12 +2,13 @@
 
 const express = require('express');
 const app = express();
-const port = 4000;
-const mongoose = require('mongoose');
-const mongoURL = 'mongodb://mongo-db:27017/twitterdb'; // Ensure mongo-db is the service name
+const port = process.env.PORT || 4000;
 const { setupSwagger } = require('./swagger/index.js');
 const userRouter = require('./routes/user.js');
 const tweetRouter = require('./routes/tweet.js');
+const dbConnect = require('./db/db.js');
+const authRouter = require('./routes/auth.js');
+require('dotenv').config()
 
 // Middleware to parse JSON requests
 app.use(express.json());
@@ -18,9 +19,7 @@ app.get('/', (req, res) => {
 });
 
 // Connect to MongoDB
-mongoose.connect(mongoURL)
-  .then(() => console.log('MongoDB connected!'))
-  .catch(err => console.error('MongoDB connection error:', err)); // Proper error handling
+dbConnect().catch((err)=> {console.log(err)})
 
 // Set up Swagger
 setupSwagger(app);
@@ -33,3 +32,4 @@ app.use(express.json());
 // Routes
 app.use('/api/v1/user', userRouter)
 app.use('/api/v1/tweet', tweetRouter)
+app.use('/api/v1/auth', authRouter)
