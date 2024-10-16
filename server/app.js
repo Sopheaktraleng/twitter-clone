@@ -9,6 +9,8 @@ const tweetRouter = require('./routes/tweet.js');
 const dbConnect = require('./db/db.js');
 const authRouter = require('./routes/auth.js');
 const passport = require('passport')
+const jwtStrategy = require('./common/strategies/jwt-strategy.js')
+const googleStrategy = require('./common/strategies/google-strategy.js')
 require('dotenv').config()
 
 // Middleware to parse JSON requests
@@ -36,3 +38,4 @@ app.use('/api/v1/tweet', tweetRouter)
 app.use('/api/v1/auth', authRouter)
 
 app.use(passport.initialize())
+passport.use(jwtStrategy)
