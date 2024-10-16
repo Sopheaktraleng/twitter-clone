@@ -1,5 +1,5 @@
 const { checkSchema } = require("express-validator");
-const { checkIfEmailExist } = require("../common");
+const { checkIfEmailExist } = require("..");
 
 const createUserValidator = checkSchema({
     username: {
