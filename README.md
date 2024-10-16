@@ -4,7 +4,7 @@ This Twitter Clone is a full-stack web application with a Vue.js frontend and an
 
 1. Clone the repository:
    ```bash
-   $ git clone https://github.com/your-username/twitter-clone.git
+   $ git clone https://github.com/Sopheaktraleng/twitter-clone.git
    ```
 2. Set up frontend
      ```bash
