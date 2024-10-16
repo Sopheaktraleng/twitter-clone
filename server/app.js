@@ -8,6 +8,7 @@ const userRouter = require('./routes/user.js');
 const tweetRouter = require('./routes/tweet.js');
 const dbConnect = require('./db/db.js');
 const authRouter = require('./routes/auth.js');
+const passport = require('passport')
 require('dotenv').config()
 
 // Middleware to parse JSON requests
@@ -30,6 +31,8 @@ app.listen(port, () => {
 });
 app.use(express.json());
 // Routes
-app.use('/api/v1/user', userRouter)
+app.use('/api/v1/user', passport.authenticate('jwt',{session: false}) ,userRouter)
 app.use('/api/v1/tweet', tweetRouter)
 app.use('/api/v1/auth', authRouter)
+
+app.use(passport.initialize())
