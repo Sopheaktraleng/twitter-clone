@@ -43,7 +43,8 @@
             </div>
         
         <!-- User Menu -->
-        <div
+        <div 
+
               class=" mt-5 w-14 xl:w-full mx-auto  flex flex-row justify-between mb-5 rounded-full hover:bg-blue-50 dark:hover:bg-dim-800 p-2 cursor-pointer transition duration-350 ease-in-out mb-2 font-sans">
               <div class="flex flex-row">
                 <img
@@ -53,9 +54,9 @@
                 />
                 <div class="hidden xl:block flex flex-col ml-2">
                   <h1 class="text-gray-800 dark:text-white font-bold text-sm">
-                    Joe Biden
+                    Logout
                   </h1>
-                  <p class="text-gray-400 text-sm">@JoeBiden</p>
+                  <p class="text-gray-400 text-sm"></p>
                 </div>
               </div>
               <div class="hidden xl:block">
@@ -93,8 +94,19 @@ import MoreIcon from "./icons/MoreIcon.vue";
 import NotificationIcon from "./icons/NotificationIcon.vue";
 import PremiumIcon from "./icons/PremiumIcon.vue";
 import ProfileIcon from './icons/ProfileIcon.vue';
+
 export default{
     name: "Left_nav",
+    // methods:{
+    //   ...mapActions(useAuthStore, ['logout']),
+    //   logUserOut(){
+    //     this.logout();
+    //     this.$router.push('/');
+    //   }
+    // },
+    // computed:{
+    //   ...mapState(useAuthStore, ['loggedUser'])
+    // },
     components:{ HomeIcon, ListIcon, MessageIcon, PremiumIcon, NotificationIcon, MoreIcon, CommuntitiesIcon, BookmarkIcon,ExploreIcon, ProfileIcon, MenuItem}
 };
 </script>
