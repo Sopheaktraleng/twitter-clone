@@ -1,7 +1,7 @@
 <template>
   <!-- Right -->
-  <div class="w-1/3 pt-1 space-y-5 font-sans">
-    <div class=" bg-white top-0 py-2 w">
+  <div class="w-1/3 pt-1 font-sans ">
+    <div class="top-0 py-2">
           <search-input/>
         </div>
         <boxlight class="mt-2">

@@ -1,5 +1,5 @@
 <template>
-    <div class="pb-4">
+    <div class="pb-4 border-solid border-l-0 border-r-0 border-b-0">
       <div class="flex flex-shrink-0 p-4 pb-0">
         <a href="#" class="flex-shrink-0 group block">
           <div class="flex items-top">

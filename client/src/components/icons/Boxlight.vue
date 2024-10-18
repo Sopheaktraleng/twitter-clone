@@ -10,7 +10,7 @@ export default defineComponent({
 </script>
 
 <template>
-<div class=" border-black border-2 rounded-lg p-4 w-2/3">
+<div class="border border-solid rounded-lg w-lg p-4 mr-4">
   <div v-if="title" class="font-bold text-lg p-4 pb-3">{{title}}</div>
   <div class="text-sm">
     <slot></slot>

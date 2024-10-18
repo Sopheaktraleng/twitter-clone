@@ -1,8 +1,8 @@
 <template>
   <!-- Middle -->
-  <div class="border w-1/2 font-sans">
+  <div class="border border-solid border-t-0 border-b-0 w-1/2 font-sans mt-0 pt-0">
           <!-- Header -->
-          <div class="w-full flex top-0 z-10">
+          <div class="w-full flex top-0 z-10 border-solid border-r-0 border-l-0 border border-t-0">
     <top-nav class="flex-initial w-1/2">For you</top-nav>
     <top-nav class="flex-initial w-1/2">Following</top-nav>
           </div>
@@ -110,10 +110,10 @@
             </div>
           </div>
           <div
-            class="border-b py-2 border-l border-r"
+            class="border border-solid p-4 border-l-0 border-r-0"
           >
             <div
-              class="text-blue-dark text-center">
+              class="text-blue-dark text-center ">
               Show 9 Tweets
             </div>
           </div>
@@ -121,7 +121,7 @@
        
           <!--head-->
           <!-- Tweet -->
-          <div>
+          <div p-4>
             <div class=" p-4 pb-0">
               <a href="#" class="">
                 <div class="flex items-top">
@@ -181,7 +181,7 @@
                 />
               </div>
 
-              <div class="flex">
+              <div class="flex p-4">
                 <div class="w-full">
                   <div class="flex items-center">
                     <div
@@ -257,11 +257,13 @@
           </div>
           <!-- /Tweet -->
           <!-- Tweet -->
+           <div>
           <tweet-show ></tweet-show>
           <tweet-show ></tweet-show>
           <Tweet v-for="(tweet, index) in tweets" :tweet="tweet" :key="index"/>
+          <tweet-show ></tweet-show>
           <!-- /Tweet -->
-
+        </div>
           <!-- Spinner -->
           <div
             class="flex justify-center p-4"

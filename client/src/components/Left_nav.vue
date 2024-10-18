@@ -1,5 +1,5 @@
 <template>
-    <div class="p-2 h-screen sticky top-0 w-min lg:w-64">
+    <div class="p-2 h-screen top-0 w-min lg:w-64">
         <div class="flex flex-col fixed px-3">
             <router-link class="w-8 mx-auto lg:mx-0" to="/" >
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0 0 24 24">

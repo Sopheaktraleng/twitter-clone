@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white dark:bg-dim-900">
+    <div class="bg-white">
         <div class="w-full px-2">
             <div class="flex flex-row justify-center">
                 <Left_nav/>
