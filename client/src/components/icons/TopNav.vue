@@ -7,7 +7,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="p-3 text-center hover:bg-gray-100 cursor-pointer"><slot></slot></div>
+  <div class="p-3 text-center font-bold text-grey-darker hover:text-black"><slot></slot></div>
 </template>
 
 <style scoped>

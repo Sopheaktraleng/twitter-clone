@@ -7,7 +7,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="hover:bg-light px-4 py-2 cursor-pointer ease-in duration-100 text-sm">
+  <div class="px-4 text-sm">
     <slot></slot>
   </div>
 </template>

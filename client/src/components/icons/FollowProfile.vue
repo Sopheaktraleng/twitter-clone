@@ -28,7 +28,7 @@ export default defineComponent({
         <p>{{user_profile.username}}</p>
       </div>
       <div class="">
-        <button-defualt :dark_mode="true" class="px-2 bg-blue">Follow</button-defualt>
+        <button-defualt :dark_mode="true" class="px-2 bg-black text-white">Follow</button-defualt>
       </div>
     </div>
   </trend-item-box>

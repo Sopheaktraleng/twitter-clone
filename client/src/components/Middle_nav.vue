@@ -1,10 +1,10 @@
 <template>
   <!-- Middle -->
-  <div class="border border-solid border-t-0 border-b-0 w-1/2 font-sans mt-0 pt-0">
+  <div class="border border-solid border-t-0 border-b-0 w-1/2 font-sans mt-0 pt-0 border-grey-light">
           <!-- Header -->
-          <div class="w-full flex top-0 z-10 border-solid border-r-0 border-l-0 border border-t-0">
-    <top-nav class="flex-initial w-1/2">For you</top-nav>
-    <top-nav class="flex-initial w-1/2">Following</top-nav>
+          <div class="w-full flex top-0 z-10 border-solid border-r-0 border-l-0 border border-t-0 border-grey-light ">
+    <top-nav class="flex-initial w-1/2 hover:underline">For you</top-nav>
+    <top-nav class="flex-initial w-1/2 hover:underline">Following</top-nav>
           </div>
       <!--head-->
       <form @submit.prevent = "submitTweet">
@@ -25,10 +25,10 @@
                 
               </div>
             </div>
-            <div class="w-full flex items-top p-2 ml-12 text-white pl-14">
+            <div class="w-full flex items-top p-2 ml-12 pl-14">
               <a
                 href="#"
-                class="text-blue-400 rounded-full p-2"
+                class=" rounded-full p-2 text-blue"
               >
                 <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor">
                   <g>
@@ -42,7 +42,7 @@
 
               <a
                 href="#"
-                class="rounded-full p-2"
+                class="rounded-full p-2 text-blue"
               >
                 <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor">
                   <g>
@@ -58,7 +58,7 @@
 
               <a
                 href="#"
-                class="rounded-full p-2"
+                class="rounded-full p-2 text-blue"
               >
                 <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor">
                   <g>
@@ -71,7 +71,7 @@
 
               <a
                 href="#"
-                class="rounded-full p-2"
+                class="rounded-full p-2 text-blue"
               >
                 <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor">
                   <g>
@@ -89,9 +89,9 @@
 
               <a
                 href="#"
-                class="rounded-full p-2"
+                class="rounded-full p-2 text-blue"
               >
-                <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor">
+                <svg viewBox="0 0 24 24" class="w-5 h-5 " fill="currentColor">
                   <g>
                     <path d="M-37.9 18c-.1-.1-.1-.1-.1-.2.1 0 .1.1.1.2z"></path>
                     <path
@@ -106,15 +106,15 @@
                   </g>
                 </svg>
               </a>
-              <div type="submit" class="ml-auto mr-16  w-16 h-5 bg-blue font-lg text-lg rounded-full text-center p-2">Post</div>
+              <div type="submit" class="ml-auto mr-20  w-16 h-5 bg-blue font-bold text-white rounded-full text-center p-2">Post</div>
             </div>
           </div>
           <div
-            class="border border-solid p-4 border-l-0 border-r-0"
+            class="border border-solid p-4 border-l-0 border-r-0 border-grey-light"
           >
             <div
               class="text-blue-dark text-center ">
-              Show 9 Tweets
+              Show 99 posts
             </div>
           </div>
         </form>

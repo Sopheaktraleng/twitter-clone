@@ -11,7 +11,7 @@
               Subscribe to unlock new features and if eligible, receive a share of ads revenue.
             </div>
             <div class="py-2 ">
-              <button-defualt class="bg-blue md:w-32">Subscribe</button-defualt>
+              <button-defualt class="bg-black text-white md:w-32">Subscribe</button-defualt>
             </div>
           </div>
         </boxlight>
@@ -29,7 +29,7 @@
         </boxlight>
         <boxlight class="mt-4" :title="'Who to follow'">
           <follow-profile></follow-profile>
-          <trend-item-box class="text-primary rounded-b-2xl py-5">Show more</trend-item-box>
+          <trend-item-box class=" rounded-b-2xl py-5">Show more</trend-item-box>
         </boxlight>
         <!-- <box-light :title="'Who to follow'">
 

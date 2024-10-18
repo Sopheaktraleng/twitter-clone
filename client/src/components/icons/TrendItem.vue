@@ -19,7 +19,7 @@ export default defineComponent({
   <trend-item-box>
     <div class="float-right">
       <twit-button-action>
-        <dot-icon class="w-5 h-6 opacity-50"/>
+        <dot-icon class="w-5 h-6"/>
       </twit-button-action>
     </div>
     <div>
