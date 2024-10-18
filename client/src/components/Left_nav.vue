@@ -45,7 +45,7 @@
         <!-- User Menu -->
         <div 
 
-              class=" mt-5 w-14 xl:w-full mx-auto  flex flex-row justify-between mb-5 rounded-full hover:bg-blue-50 dark:hover:bg-dim-800 p-2 cursor-pointer transition duration-350 ease-in-out mb-2 font-sans">
+              class=" mt-5 w-14 mx-auto  flex flex-row justify-between mb-5 rounded-full  p-2  font-sans">
               <div class="flex flex-row">
                 <img
                   class="w-10 h-10 rounded-full"

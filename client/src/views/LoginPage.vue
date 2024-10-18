@@ -11,7 +11,7 @@
         <div class="w-1/2 md:w-1/2 m-auto">
             <div class="font-bold text-5xl">Happening Now</div>
             <div class="font-bold text-3xl mt-10">Join today.</div>
-            <div class=" mt-10 w-full md:w-2/3 lg:w-2/3 xl:w-2/3 grid grid-cols-1 space-y-2">
+            <div class=" mt-10 w-full md:w-2/3 lg:w-2/3 xl:w-2/3  space-y-2">
                 <button-defualt class="flex justify-center gap-2">
                     <google-icon class="px-2"></google-icon>
                      Sign up with Google

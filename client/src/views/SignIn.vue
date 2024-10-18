@@ -1,6 +1,6 @@
 <template>
     <div class="h-full flex flex-col justify-center bg-black rounded-lg w-full">
-        <div class="mx-auto w-96 h-96 shadow-xl border-2 rounded-lg">
+        <div class="mx-auto w-96 h-96 rounded-lg">
             <router-link to="/" >
                 <svg class=" p-3" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0 0 24 24">
                     <path d="M 2.3671875 3 L 9.4628906 13.140625 L 2.7402344 21 L 5.3808594 21 L 10.644531 14.830078 L 14.960938 21 L 21.871094 21 L 14.449219 10.375 L 20.740234 3 L 18.140625 3 L 13.271484 8.6875 L 9.2988281 3 L 2.3671875 3 z M 6.2070312 5 L 8.2558594 5 L 18.033203 19 L 16.001953 19 L 6.2070312 5 z"></path>
@@ -8,7 +8,7 @@
             </router-link>
                 <div class="font-bold text-3xl items-center px-3">Sign in to X
         
-    <form @submit.prevent="handleLogin" class="container justify-stretch w-96 space-y-2 mx-20">
+    <form @submit.prevent="handleLogin" class="w-96 space-y-2 mx-20">
                     <div class=" mt-5">
                         <div class="text-lg">Username:
                             <input type="text" id="username" v-model="username"/>
