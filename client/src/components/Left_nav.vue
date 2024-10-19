@@ -7,9 +7,11 @@
                 </svg>
             </router-link>
           <div class="mt-5">
+            <router-link to="/home" class=" no-underline text-black">
             <menu-item :title="'Home'" class="">
               <home-icon class="w-6 mx-auto lg:mx-0"/>
             </menu-item>
+          </router-link>
             <menu-item :title="'Explore'">
               <explore-icon class="w-6 mx-auto lg:mx-0"/>
             </menu-item>
@@ -31,9 +33,12 @@
             <menu-item :title="'Premium'">
               <premium-icon class="w-6 mx-auto lg:mx-0"/>
             </menu-item>
-            <menu-item :title="'Profile'" :go-to="'/profile'">
+            <router-link to="/profile" class=" no-underline text-black">
+              <menu-item :title="'Profile'">
               <profile-icon class="w-6 mx-auto lg:mx-0" />
-            </menu-item>
+            </menu-item></router-link>
+            
+
             <menu-item :title="'More'">
               <more-icon class="w-6 mx-auto lg:mx-0"/>
             </menu-item>

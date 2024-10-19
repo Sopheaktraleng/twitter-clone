@@ -3,7 +3,8 @@
         <div class="w-full px-2">
             <div class="flex flex-row justify-center">
                 <Left_nav/>
-                <Middle_nav class="mx-12"/>
+                <Middle_nav class="mx-12">
+                </Middle_nav>
                 <Right_nav/>
             </div>
         </div>
