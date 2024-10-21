@@ -17,7 +17,7 @@
                 <div class="w-full p-2">
                   <textarea
                     class="placeholder-gray-400 w-full h-10  border-0 focus:outline-none resize-none font-sans text-lg"
-                    placeholder="What's happening? " v-model="text"
+                    placeholder="What's happening? " v-model="tweetText"
                   ></textarea>
                   
                 </div>
@@ -103,7 +103,7 @@
                     </g>
                   </svg>
                 </a>
-                <button type="submit" class="ml-auto mr-20  w-24 h-10 bg-blue font-bold text-white rounded-full text-center border-0 ">Post</button>
+                <button @click="postTweet" class="ml-auto mr-20  w-24 h-10 bg-blue font-bold text-white rounded-full text-center border-0 ">Post</button>
               </div>
             </div>
             <div
@@ -255,25 +255,19 @@
             <!-- /Tweet -->
             <!-- Tweet -->
              <div>
-            <tweet-show >{{ showtext }}</tweet-show>
-            <tweet-show ></tweet-show>
-            <Tweet v-for="(tweet, index) in tweets" :tweet="tweet" :key="index"/>
-            <tweet-show ></tweet-show>
+                <Tweet  />
+                <tweet />
             <!-- /Tweet -->
           </div>
             <!-- Spinner -->
-            <div
-              class="flex justify-center p-4"
-            >
+        <div class="flex justify-center p-4">
               <svg class="w-8 h-8 ">
-                <circle
-                  cx="16"
-                  cy="16"
+                <circle cx="16"
+                cy="16"
                   fill="none"
                   r="14"
                   stroke-width="4"
-                  style="stroke: rgb(29, 161, 242); opacity: 0.2"
-                ></circle>
+                  style="stroke: rgb(29, 161, 242); opacity: 0.2"></circle>
                 <circle
                   cx="16"
                   cy="16"
@@ -283,9 +277,7 @@
                   style="
                     stroke: rgb(29, 161, 242);
                     stroke-dasharray: 80;
-                    stroke-dashoffset: 60;
-                  "
-                ></circle>
+                    stroke-dashoffset: 60;"></circle>
               </svg>
             </div>
             <!-- /Spinner -->
@@ -296,25 +288,32 @@
   </template>
   <script>
 import TopNav from '@/components/icons/TopNav.vue';
-import TweetShow from '@/components/icons/TweetShow.vue';
-
+import { useTweetStore } from '@/store/tweet';
+import Tweet from '../components/icons/Tweet.vue';
   
   export default{
     name: "display-main",
-    components:{TopNav, TweetShow},
+    components:{TopNav, Tweet},
     data(){
       return {
-      showtext: '',
-      text: '',
-      }
+      tweetText: '',
+      };
     },
-    methods: {
-      submitTweet(){
-        this.showtext = this.text;
-        this.text = '';
-      }
+    methods:{
+        postTweet(){
+            if(this.tweetText.trim()=== ''){
+                return;
+            }
+            const tweet = {
+                text: this.tweetText
+            };
+            const tweetStore = useTweetStore();
+            tweetStore.addTweet(tweet);
+            console.log(this.tweetText)
+            this.tweetText = '';
+        }
     }
-  
-  }
+    
+}
   </script>
   

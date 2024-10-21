@@ -36,10 +36,10 @@
         </a>
       </div>
       <div class="pl-16">
-        <p
-            class="text-base width-auto font-medium"
-        >akfljaffldkdkddkdjkfjalalalflalfkvnvaperjlaptslamvmesldlf
-          <!-- {{ tweet.text }} -->
+        <p class="text-base width-auto font-medium" v-for="(tweet, index) in tweetStore.tweets"
+        :key="index"
+        :tweet="tweet" >
+          {{ tweet.text }}
         </p>
         <div class="flex">
           <div class="w-full">
@@ -117,9 +117,10 @@
     </div>
   </template>
   <script>
-  import moment from "moment";
+  import { useTweetStore } from "@/store/tweet";
+import moment from "moment";
   export default {
-    name: 'TweetShow',
+    name: 'Tweet-show',
     props: {
       tweet: Object
     },
@@ -128,6 +129,10 @@
         moment: moment
       }
     },
+    setup(){
+      const tweetStore = useTweetStore();
+      return { tweetStore}
+    }
     // 
   }
   </script>
