@@ -255,8 +255,7 @@
             <!-- /Tweet -->
             <!-- Tweet -->
              <div>
-                <Tweet  />
-                <tweet />
+                <Tweet v-for="(tweet, index) in tweetStore.tweets" :key="index" :tweet="tweet"  />
             <!-- /Tweet -->
           </div>
             <!-- Spinner -->
@@ -312,6 +311,10 @@ import Tweet from '../components/icons/Tweet.vue';
             console.log(this.tweetText)
             this.tweetText = '';
         }
+    },
+    setup(){
+      const tweetStore = useTweetStore();
+      return { tweetStore}
     }
     
 }

@@ -36,9 +36,7 @@
         </a>
       </div>
       <div class="pl-16">
-        <p class="text-base width-auto font-medium" v-for="(tweet, index) in tweetStore.tweets"
-        :key="index"
-        :tweet="tweet" >
+        <p class="text-base width-auto font-medium" >
           {{ tweet.text }}
         </p>
         <div class="flex">
