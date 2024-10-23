@@ -1,6 +1,6 @@
 const express = require('express');
 const userRouter = express.Router();
-const { getUserById, getAllUser, updateById, deleteById} = require('../controllers/users');
+const { getUserById, getAllUser, updateById, deleteById, getTweetByUserId} = require('../controllers/users');
 /**
  * @swagger
  * components:
@@ -66,5 +66,6 @@ userRouter.get('/',getAllUser)
 userRouter.get('/:id',getUserById)
 userRouter.put('/:id',updateById)
 userRouter.delete('/:id',deleteById)
+userRouter.get(':id/tweets',getTweetByUserId)
 
 module.exports = userRouter;

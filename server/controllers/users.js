@@ -63,5 +63,11 @@ const loginUser = (asyncHandler(async (req, res) => {
     const token = signToken(user._id, user.email, user.username)
     return res.status(200).json({ token })
 }))
+// Get Tweets by UserId
+const getTweetByUserId = asyncHandler(async(req,res)=>{
+    const id = req.params.id
+    const users = await userModel.findById(id).populate('tweets').select('tweets')
+    res.send(user)
+})
 
-module.exports = { createUser, getUserById, getAllUser, updateById, deleteById, loginUser};
+module.exports = { createUser, getUserById, getAllUser, updateById, deleteById, loginUser, getTweetByUserId};
