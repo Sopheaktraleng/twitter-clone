@@ -3,14 +3,14 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 4000;
-const { setupSwagger } = require('./swagger/index.js');
+
 const userRouter = require('./routes/user.js');
 const tweetRouter = require('./routes/tweet.js');
-const dbConnect = require('./db/db.js');
+const dbConnect = require('./config/db.js');
 const authRouter = require('./routes/auth.js');
 const passport = require('passport')
-const jwtStrategy = require('./common/strategies/jwt-strategy.js')
-const googleStrategy = require('./common/strategies/google-strategy.js')
+const jwtStrategy = require('./utils/strategies/jwt-strategy.js')
+const { setupSwagger } = require('./utils/swagger/index.js');
 require('dotenv').config()
 
 // Middleware to parse JSON requests

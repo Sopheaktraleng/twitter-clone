@@ -1,7 +1,7 @@
 const { userModel } = require('../models/user.js'); // Correct import
 const asyncHandler = require('express-async-handler');
 const bcrypt = require('bcryptjs');
-const { signToken } = require('../common/index.js');
+const { signToken } = require('../utils/index.js');
 
 //create User
 const createUser = asyncHandler(async (req, res) => {

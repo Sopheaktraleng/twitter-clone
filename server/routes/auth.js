@@ -1,7 +1,7 @@
 const express = require('express');
 const { loginUser, createUser } = require('../controllers/users');
 const {verifyToken, validationErrorHandler} = require('../midderware');
-const { createUserValidator } = require('../common/validators/user');
+const { createUserValidator } = require('../utils/validators/user');
 const passport = require('passport');
 const authRouter = express.Router();
 
