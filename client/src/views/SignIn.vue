@@ -7,7 +7,7 @@
                 </svg>
             </router-link>
                 <div class="font-bold text-3xl items-center px-3">Sign in to X
-        
+
     <form @submit.prevent="handleLogin" class="w-96 space-y-2 mx-20">
                     <div class=" mt-5">
                         <div class="text-lg">Username:

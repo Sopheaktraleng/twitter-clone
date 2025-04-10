@@ -11,18 +11,19 @@
         <div class="w-1/2 mb-24 md:w-1/2 m-auto">
             <div class="font-bold text-5xl">Happening Now</div>
             <div class="font-bold text-3xl mt-10">Join today.</div>
-            <div class=" mt-10 w-full md:w-2/3 lg:w-2/3 xl:w-2/3  space-y-2">
-                <button-defualt class="flex justify-center gap-2">
+            <div class=" mt-10 w-full md:w-2/3 lg:w-32 xl:w-2/3  ">
+                <button-defualt class="flex justify-center gap-2 bg-white border border-black">
                     <google-icon class="px-2"></google-icon>
                      Sign up with Google
                 </button-defualt>
-                <button-defualt class="flex justify-center gap-2">
+                <button-defualt class="flex justify-center gap-2 bg-white border border-black">
                     <apple-icon class="px-2"></apple-icon>
                      Sign up with Apple
                 </button-defualt>
-               <devider-rule>or</devider-rule>
-                <button-defualt class="bg-blue hover:bg-blue text-light">Create Account</button-defualt>
-                <div class="text-xs pt-3">
+              <DeviderRule></DeviderRule>
+
+              <button-defualt class="bg-blue border-0 hover:bg-blue text-white">Create Account</button-defualt>
+                <div class="text-xs pt-3 w-3/4">
           By signing up, you agree to the <span class="text-blue">Terms of Service</span> and <span class="text-blue">Privacy Policy</span>, including <span class="text-blue">Cookie Use</span>.
         </div>
         <div>
@@ -30,7 +31,7 @@
             Already have an account?
           </div>
           <router-link :to="'/login'" >
-          <button-defualt class="mt-5 text-blue" @click="showModal">Sign in</button-defualt>
+          <button-defualt class="mt-5 text-blue bg-white border" @click="showModal">Sign in</button-defualt>
         </router-link>
         </div>
             </div>    
