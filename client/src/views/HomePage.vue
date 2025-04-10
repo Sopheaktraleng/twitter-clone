@@ -2,10 +2,10 @@
     <div class="bg-white">
         <div class="w-full px-2">
             <div class="flex flex-row justify-center">
-                <Left_nav/>
+                <Left_nav class="ml-20"/>
                 <Middle_nav class="mx-12">
                 </Middle_nav>
-                <Right_nav/>
+                <Right_nav class="mr-20"/>
             </div>
         </div>
     </div>
