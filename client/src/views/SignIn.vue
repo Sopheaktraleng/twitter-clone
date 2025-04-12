@@ -64,6 +64,7 @@
               >Login</button-defualt
             >
           </form>
+          <p v-if="error" class="text-red-500 mt-2">{{ error }}</p>
         </div>
       </div>
     </div>
@@ -83,23 +84,46 @@ export default {
     return {
       username: '',
       password: '',
+      error: '',
     }
   },
   methods: {
-    handleLogin() {
-      const userStore = useUserStore()
-      const user = userStore.getUserByUsername(this.username)
-      if (user && user.password === this.password) {
-        // Navigate to home page after successful login
-        this.$router.push('/home')
-      } else {
-        // Handle invalid login
-        console.error('Invalid username or password')
-      }
-      // Clear fields after login attempt
-      this.username = ''
-      this.password = ''
-    },
+    async handleLogin() {
+      // add code
+      try {
+        const response = await fetch(
+          'http://localhost:4000/api/v1/auth/login',
+          {
+            // add code
+            method: 'POST', // add code
+            headers: { 'Content-Type': 'application/json' }, // add code
+            body: JSON.stringify({
+              email: this.username,
+              password: this.password,
+            }), // add code
+          }
+        ) // add code
+
+        const result = await response.json() // add code
+
+        if (response.ok) {
+          // add code
+          localStorage.setItem('token', result.token) // add code
+          this.$router.push('/home') // add code
+        } else {
+          // add code
+          this.error = result.error || 'Invalid credentials' // add code
+        }
+      } catch (err) {
+        // add code
+        console.error(err) // add code
+        this.error = 'Server error, please try again' // add code
+      } finally {
+        // add code
+        this.username = '' // add code
+        this.password = '' // add code
+      } // add code
+    }, // add code
     ...mapActions(useUserStore, ['getcurrentUser']),
   },
   computed: {
