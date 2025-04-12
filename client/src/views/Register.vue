@@ -26,7 +26,7 @@
         <div class="w-full flex flex-col justify-center items-center">
           <h1 class="font-bold text-black">Create your account</h1>
           <form
-            @submit.prevent="handleLogin"
+            @submit.prevent="handleRegister"
             class="flex flex-col justify-center items-center"
           >
             <input
@@ -38,8 +38,8 @@
             />
             <input
               type="text"
-              id="username"
-              v-model="username"
+              id="email"
+              v-model="email"
               placeholder="Email..."
               class="w-64 h-8 my-2 bg-white"
             />
@@ -63,37 +63,59 @@
   </div>
 </template>
 <script>
-import { useUserStore } from '@/store/user'
 import ButtonDefualt from '@/components/icons/ButtonDefualt.vue'
-import { mapState, mapActions } from 'pinia'
 export default {
   name: 'SignIn',
   components: { ButtonDefualt },
   data() {
     return {
+      email: '',
       username: '',
       password: '',
     }
   },
   methods: {
-    handleLogin() {
-      const userStore = useUserStore()
-      const user = userStore.getUserByUsername(this.username)
-      if (user && user.password === this.password) {
-        // Navigate to home page after successful login
-        this.$router.push('/home')
-      } else {
-        // Handle invalid login
-        console.error('Invalid username or password')
-      }
-      // Clear fields after login attempt
-      this.username = ''
-      this.password = ''
-    },
-    ...mapActions(useUserStore, ['getcurrentUser']),
-  },
-  computed: {
-    ...mapState(useUserStore, ['getUser']),
+    async handleRegister() {
+      // add code
+      try {
+        const response = await fetch(
+          'http://localhost:4000/api/v1/auth/register',
+          {
+            // add code
+            method: 'POST', // add code
+            headers: {
+              // add code
+              'Content-Type': 'application/json', // add code
+            }, // add code
+            body: JSON.stringify({
+              // add code
+              username: this.username, // add code
+              email: this.email, // add code
+              password: this.password, // add code
+            }), // add code
+          }
+        ) // add code
+
+        const result = await response.json() // add code
+
+        if (response.ok) {
+          // add code
+          console.log('Registration successful:', result) // add code
+          this.$router.push('/login') // add code
+        } else {
+          // add code
+          console.error('Registration failed:', result.message || result) // add code
+        } // add code
+      } catch (err) {
+        // add code
+        console.error('Error:', err) // add code
+      } finally {
+        // add code
+        this.username = '' // add code
+        this.email = '' // add code
+        this.password = '' // add code
+      } // add code
+    }, // add code
   },
 }
 </script>
