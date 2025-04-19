@@ -1,22 +1,13 @@
-version: '3.8'
+version: "3.8"
+
 services:
-  twitter-server:
-    build: .
-    container_name: twitter-server
-    restart: always
-    volumes:
-      - .:/app
-    ports:
-      - 4000:4000
-    depends_on:
-      - mongo-db
-  mongo-db:
-    image: mongo:latest
-    container_name: tra-mongo
-    restart: always
-    ports:
-      - '27017:27017'
-    volumes:
-      - mongodbdata:/data/db
-volumes:
-  mongodbdata:
+    twitter-server:
+        build: .
+        container_name: twitter-server
+        restart: always
+        volumes:
+            - .:/app
+        ports:
+            - 4000:4000
+        env_file:
+            - .env
