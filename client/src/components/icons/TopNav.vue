@@ -1,15 +1,15 @@
 <script>
-import {defineComponent} from 'vue'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: "TopNav"
+  name: 'TopNav',
 })
 </script>
 
 <template>
-  <div class="p-3 text-center font-bold text-grey-darker hover:text-black"><slot></slot></div>
+  <div class="p-3 text-center font-bold text-grey-darker hover:text-black">
+    <slot></slot>
+  </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

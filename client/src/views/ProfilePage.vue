@@ -1,8 +1,8 @@
 <template v-slot:profile>
-    <h1>hello</h1>
+  <h1>hello</h1>
 </template>
 <script>
-export default{
-    name: 'profile-page',
+export default {
+  name: 'profile-page',
 }
 </script>

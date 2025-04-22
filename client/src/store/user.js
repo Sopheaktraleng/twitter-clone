@@ -1,6 +1,6 @@
 // src/store/user.js
 
-import { defineStore } from 'pinia';
+import { defineStore } from 'pinia'
 
 export const useUserStore = defineStore({
   id: 'user',
@@ -9,17 +9,17 @@ export const useUserStore = defineStore({
       { id: 1, username: 'sopheaktraleng', password: '123456' },
       // Add more users as needed
     ],
-    currentUser:{}
+    currentUser: {},
   }),
   getters: {
     getUserByUsername: (state) => (username) => {
-      return state.users.find(user => user.username === username);
+      return state.users.find((user) => user.username === username)
     },
-    getcurrentUser: (state)=>state.currentUser
+    getcurrentUser: (state) => state.currentUser,
   },
   actions: {
-      setcurrentUser(user){
-        this.currentUser=user
-      }
-  }
-});
+    setcurrentUser(user) {
+      this.currentUser = user
+    },
+  },
+})

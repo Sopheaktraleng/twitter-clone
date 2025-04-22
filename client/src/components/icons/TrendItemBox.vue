@@ -1,8 +1,8 @@
 <script>
-import {defineComponent} from 'vue'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: "TrendItemBox"
+  name: 'TrendItemBox',
 })
 </script>
 
@@ -12,6 +12,4 @@ export default defineComponent({
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
